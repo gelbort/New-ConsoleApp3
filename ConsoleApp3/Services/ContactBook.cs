@@ -1,5 +1,4 @@
-﻿// ContactBook class
-using ConsoleApp3.Models.Responses;
+﻿using ConsoleApp3.Models.Responses;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

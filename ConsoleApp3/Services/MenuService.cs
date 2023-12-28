@@ -77,15 +77,15 @@ namespace ConsoleApp3.Services
             IContact newContact = new Contact();
 
             Console.Write("Förnamn: ");
-            newContact.FirstName = Console.ReadLine().Trim();
+            newContact.FirstName = Console.ReadLine()?.Trim() ?? string.Empty;
             Console.Write("Efternamn: ");
-            newContact.LastName = Console.ReadLine().Trim();
+            newContact.LastName = Console.ReadLine().Trim() ?? string.Empty;
             Console.Write("Telefonnummer: ");
-            newContact.PhoneNumber = Console.ReadLine().Trim();
+            newContact.PhoneNumber = Console.ReadLine().Trim() ?? string.Empty;
             Console.Write("E-post: ");
-            newContact.Email = Console.ReadLine().Trim();
+            newContact.Email = Console.ReadLine().Trim() ?? string.Empty;
             Console.Write("Adress: ");
-            newContact.Address = Console.ReadLine().Trim();
+            newContact.Address = Console.ReadLine().Trim() ?? string.Empty;
 
             var result = contactBook.AddContact(newContact);
             ProcessServiceResult(result);
