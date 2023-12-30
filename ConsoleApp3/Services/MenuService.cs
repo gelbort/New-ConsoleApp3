@@ -72,7 +72,7 @@ namespace ConsoleApp3.Services
                 Environment.Exit(0);
         }
 
-        private void AddContactFromUserInput()
+        public void AddContactFromUserInput()
         {
             IContact newContact = new Contact();
 
@@ -91,14 +91,14 @@ namespace ConsoleApp3.Services
             ProcessServiceResult(result);
         }
 
-        private void RemoveContact()
+        public void RemoveContact()
         {
             Console.Write("Ange e-postadress för att ta bort kontakt: ");
             var emailToRemove = Console.ReadLine().Trim();
             contactBook.RemoveContactByEmail(emailToRemove);
         }
 
-        private void DisplayAllContacts()
+        public void DisplayAllContacts()
         {
             Console.Clear();
             contactBook.DisplayAllContacts();
@@ -106,7 +106,7 @@ namespace ConsoleApp3.Services
             Console.ReadKey();
         }
 
-        private void DisplayContactDetails()
+        public void DisplayContactDetails()
         {
             Console.Write("Ange e-postadress för att visa detaljer: ");
             var emailToDisplay = Console.ReadLine().Trim();
@@ -131,7 +131,7 @@ namespace ConsoleApp3.Services
             Console.ReadKey();
         }
 
-        private void ProcessServiceResult(ServiceResult result)
+        public void ProcessServiceResult(ServiceResult result)
         {
             if (result.Status == ServiceStatus.SUCCEDED)
             {

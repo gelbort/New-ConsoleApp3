@@ -1,12 +1,12 @@
-﻿using ConsoleApp3.Models.Responses;
+﻿using ConsoleApp3.Enums;
+using ConsoleApp3.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using ConsoleApp3.Enums;
-using ConsoleApp3.Interfaces;
 using Newtonsoft.Json;
+using ConsoleApp3.Models.Responses;
 
 namespace ConsoleApp3.Services
 {
@@ -17,6 +17,7 @@ namespace ConsoleApp3.Services
 
         public ContactBook()
         {
+            contacts = new List<IContact>(); 
             LoadContactsFromFile();
         }
 
@@ -113,10 +114,7 @@ namespace ConsoleApp3.Services
                 var concreteContacts = JsonConvert.DeserializeObject<List<Contact>>(json);
                 contacts = concreteContacts.Cast<IContact>().ToList();
             }
-            else
-            {
-                contacts = new List<IContact>();
-            }
+            
         }
 
         private void SaveContactsToFile()
